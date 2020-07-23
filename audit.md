@@ -17,6 +17,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
   * Validators
   * Delegators
 * Bank
+  * Balances
 * Gov
 * Auth  
 
@@ -26,7 +27,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * Endpoint Path:
 ```"/staking/validators"```
 * What Changed: 
-    The field *"unbonding_height"* is no longer supported
+    The field ```"unbonding_height"``` is no longer supported
 * Sample JSON<br/><br/>
 * **Endpoint Name:** QueryDelegatorDelegations
 * Endpoint Path: ```"/staking/delegators/delegations"```
