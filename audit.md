@@ -19,18 +19,18 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * Bank
   * Balances
 * Gov
-* Auth  
+* Auth 
 
 ### Audit Results
 #### Validators
 * **Endpoint Name:** QueryValidators
-* Endpoint Path:
+* **Endpoint Path:**
 ```"/staking/validators"```
 * What Changed: 
     The field ```"unbonding_height"``` is no longer supported
 * Sample JSON<br/><br/>
 * **Endpoint Name:** QueryDelegatorDelegations
-* Endpoint Path: ```"/staking/delegators/delegations"```
+* **Endpoint Path:** ```"/staking/delegators/delegations"```
 * **What Changed:**
   * ```“balance”``` now is no longer a number. It is a field with two values: ```"amount"``` and ```"Denom”```
 
@@ -42,7 +42,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * Sample JSON<br/><br/>
 
 * **Endpoint Name:** QueryRedelegations
-* Endpoint Path:
+* **Endpoint Path:**
 ```"/staking/redelegations"```
 * **What Changed:** The following old fields are now sub fields of a new field called ```“redelegation_entry”```:
   * ```"completion_time"```
@@ -60,7 +60,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 
 
 * **Endpoint Name:** QueryUnbondingDelegation
-* Endpoint Path:
+* **Endpoint Path:**
 ```"/staking/unbondingDelegation"```
 * **What Changed:** 
 * The old field ```“creation_height"``` is no longer supported.
