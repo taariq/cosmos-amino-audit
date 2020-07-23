@@ -26,12 +26,12 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * **Endpoint Name:** QueryValidators
 * **Endpoint Path:**
 ```"/staking/validators"```
-* What Changed: 
-    The field ```"unbonding_height"``` is no longer supported
+* **What Changed:** 
+  * The field ```"unbonding_height"``` is no longer supported
 * Sample JSON<br/><br/>
 * **Endpoint Name:** QueryDelegatorDelegations
 * **Endpoint Path:** ```"/staking/delegators/delegations"```
-* **What Changed:**
+* ****What Changed:****
   * ```“balance”``` now is no longer a number. It is a field with two values: ```"amount"``` and ```"Denom”```
 
   * ```“delegator_address”``` is no longer a string. It’s a field called ```“delegation”``` with three values: ```"delegator_address", "shares", "validator_address"```
@@ -62,7 +62,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * **Endpoint Name:** QueryUnbondingDelegation
 * **Endpoint Path:**
 ```"/staking/unbondingDelegation"```
-* **What Changed:** 
-* The old field ```“creation_height"``` is no longer supported.
+* **What Changed:**
+  * The old field ```“creation_height"``` is no longer supported.
 
 * Sample JSON<br/><br/>
