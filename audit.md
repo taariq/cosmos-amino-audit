@@ -28,11 +28,38 @@ This document is a simple review of the REST API endpoint changes between Cosmos
 * **Endpoint Path:**
 ```"/staking/validators"```
 * **What Changed:** 
-  * The field ```"unbonding_height"``` is no longer supported
-* Sample JSON<br/><br/>
+  * The fields ```"unbonding_height"``` and ```"jailed"``` are no longer supported
+* **Sample JSON:**
+```JSON
+{
+      "commission": {
+          "commission_rates": {
+              "max_change_rate": "0.000000000000000000",
+              "max_rate": "0.000000000000000000",
+              "rate": "0.000000000000000000"
+          },
+          "update_time": "1970-01-01T00:00:00Z"
+      },
+      "consensus_pubkey": "cosmosvalconspub1zcjduepqwuxd2yevzmsrmrjx2su8kdlk44eqfdzeqx27zejuen6m0nkcpzps0qavpw",
+      "delegator_shares": "0.000000000000000000",
+      "description": {
+          "details": "security",
+          "identity": "identity",
+          "moniker": "moniker",
+          "security_contact": "details",
+          "website": "website"
+      },
+      "min_self_delegation": "1",
+      "operator_address": "cosmosvaloper1pcpl7xhxq0wm72e9ljls2sxr5h3vqwytnq44sr",
+      "status": 1,
+      "tokens": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z"
+
+  }
+```   
 * **Endpoint Name:** QueryDelegatorDelegations
 * **Endpoint Path:** ```"/staking/delegators/delegations"```
-* ****What Changed:****
+* **What Changed:**
   * ```“balance”``` now is no longer a number. It is a field with two values: ```"amount"``` and ```"Denom”```
 
   * ```“delegator_address”``` is no longer a string. It’s a field called ```“delegation”``` with three values: ```"delegator_address", "shares", "validator_address"```
@@ -40,7 +67,22 @@ This document is a simple review of the REST API endpoint changes between Cosmos
   * The old field ```“validator_address”``` is no longer used. A new field ```“validator_dst_address”``` and```“validator_src_address”``` replace this in the new ```“redelegation”``` field.
 
 
-* Sample JSON<br/><br/>
+
+* Sample JSON from master: 
+```JSON
+      {
+          "balance": {
+              "amount": "5",
+              "denom": "stake"
+          },
+          "delegation": {
+              "delegator_address": "cosmos1n2k9ygw2ws9sg86mrx84pdcre5geqd5ugt44h0",
+              "shares": "5.000000000000000000",
+              "validator_address": "cosmosvaloper155998a4hv5kqvuxr9jryjxrtnlydvqu8c0cy03"
+          }
+      }
+```
+<br/><br/>
 
 * **Endpoint Name:** QueryRedelegations
 * **Endpoint Path:**
@@ -57,7 +99,36 @@ This document is a simple review of the REST API endpoint changes between Cosmos
         * ```valdiator_dst_address```
         * ```validator_src_address```
 
-* Sample JSON<br/><br/>
+* Sample JSON
+```JSON
+{
+    "entries": [
+        {
+            "balance": "5",
+            "redelegation_entry": {
+                "completion_time": "1969-12-31T16:00:00-08:00",
+                "initial_balance": "5",
+                "shares_dst": "5.000000000000000000"
+            }
+        },
+        {
+            "balance": "5",
+            "redelegation_entry": {
+                "completion_time": "1969-12-31T16:00:00-08:00",
+                "initial_balance": "5",
+                "shares_dst": "5.000000000000000000"
+            }
+        }
+    ],
+    "redelegation": {
+        "delegator_address": "cosmos104yggz5x4ype50c59vu84ze2w36pc3swm2u698",
+        "entries": null,
+        "validator_dst_address": "cosmosvaloper1td8yl7g5662m0mpptaxjmcn9jtzvl0wgulvv23",
+        "validator_src_address": "cosmosvaloper1gqv70e79a8q0yz5s5qhsjhdl2c79496faer0vz"
+    }
+}
+```
+<br/><br/>
 
 
 * **Endpoint Name:** QueryUnbondingDelegation
