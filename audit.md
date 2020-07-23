@@ -20,6 +20,7 @@ This document is a simple review of the REST API endpoint changes between Cosmos
   * Balances
 * Gov
 * Auth 
+* Distribution
 
 ### Audit Results
 #### Validators
